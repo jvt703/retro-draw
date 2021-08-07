@@ -19,7 +19,7 @@ const Palette = (props) => {
   /**
    * For the template, you need to:
    * - map over COLORS
-   * - return from the mapping function a <Cell /> which: 
+   * - return from the mapping function a <Cell /> which:     
    *    - has a unique key (you can use 'palette-' and the index of the color)
    *    - has a prop of color equal to the color from the map
    *    - has a prop of isActive equal to true if activeColor equals the color from the map

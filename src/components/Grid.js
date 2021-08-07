@@ -11,7 +11,9 @@ const Grid = (props) => {
   /**
    * Create constants for activeColor, cellList, and setCellList, reading the value off of the props
    */
-
+  const activeColor = props.activeColor
+  const cellList = props.cellList
+  const setCellList = props.setCellList
   
   /**
    * For the template you need to:
@@ -24,7 +26,25 @@ const Grid = (props) => {
    *        - updates the color of the clicked cell to the activeColor (the index from the map function is useful here)
    *        - calls setCellList, passing in the updated copy
    */
-  return <div className="grid"></div>
+  return <div className="grid">
+    { cellList.map( (cell, idx)=> {
+      return <Cell 
+      key ={`grid-${idx}`}
+      color = {cell.color}
+      handleClick = { () => {
+        const copy = [...cellList]
+        copy[idx].color = activeColor
+        setCellList(copy)
+      }
+      }
+      />
+    }
+
+    )
+
+    }
+
+  </div>
 }
 
 export default Grid;
